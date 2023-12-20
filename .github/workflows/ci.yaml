@@ -30,7 +30,7 @@ jobs:
         
         - name: Create report
           env:
-            REPO_TOKEN: ${{secrets.DINESH}}
+            REPO_TOKEN: ${{ secrets.SuperSecret }}
           run: |
             echo "# First line of our report" >> report.md
             echo "printed the contents of the main.py file" >> report.md
