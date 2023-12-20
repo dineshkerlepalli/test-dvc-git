@@ -16,6 +16,9 @@ jobs:
           with:
             python-version: 3.11
         
+        - name: Set up CML
+          uses: iterative/setup-cml@v2
+
         - name: Install Dependencies
           run: |
             python -m pip install --upgrade pip
@@ -27,7 +30,9 @@ jobs:
         
         - name: Create report
           env:
-            REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            REPO_TOKEN: ${{secrets.DINESH}}
           run: |
             echo "# First line of our report" >> report.md
             echo "printed the contents of the main.py file" >> report.md
+            
+            cml comment create report.md
