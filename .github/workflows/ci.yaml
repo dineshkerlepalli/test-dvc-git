@@ -24,4 +24,10 @@ jobs:
         - name: Run Main file
           run: | 
             python main.py
-    
+        
+        - name: Create report
+          env:
+            REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          run: |
+            echo "# First line of our report" >> report.md
+            echo "printed the contents of the main.py file" >> report.md
