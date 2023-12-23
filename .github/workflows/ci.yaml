@@ -7,9 +7,6 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
-        environment: 
-          name: Production
-    
         steps:
         - name: Checkout repository
           uses: actions/checkout@v3
@@ -33,9 +30,8 @@ jobs:
         
         - name: Create report
           env:
-            REPO_TOKEN: ${{ secrets.SuperSecret }}
+            REPO_TOKEN: ${{ secrets.SUPERSECRET }}
           run: |
             echo "# First line of our report" >> report.md
             echo "printed the contents of the main.py file" >> report.md
-            
             cml comment create report.md
